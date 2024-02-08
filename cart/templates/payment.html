@@ -1,0 +1,13 @@
+     {% extends 'base.html' %}
+
+       {% block content %}
+<h3>Please Enter Your Card Details Here</h3>
+
+
+<form action="{% url 'payment_view' %}" method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" class=" btn btn-success" value="PlaceOrder"/>
+</form>
+<a href="{% url 'home' %}">Cancel</a>
+     {% endblock %}
